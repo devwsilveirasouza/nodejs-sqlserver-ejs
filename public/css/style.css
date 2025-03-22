@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa;
+    padding-bottom: 20px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    font-weight: bold;
+  }
+  
+  .table {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-group .btn {
+    margin-right: 2px;
+  }

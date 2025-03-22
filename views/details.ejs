@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <h2 class="mb-0"><%= title %></h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h5>Informações Básicas</h5>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>ID:</strong> <%= produto.id %></li>
+                <li class="list-group-item"><strong>Nome:</strong> <%= produto.name %></li>
+                <li class="list-group-item"><strong>Categoria:</strong> <%= produto.categorie || 'Não informado' %></li>
+                <li class="list-group-item"><strong>Fornecedor:</strong> <%= produto.supplier || 'Não informado' %></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Informações de Estoque</h5>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Preço:</strong> R$ <%= produto.price.toFixed(2).replace('.', ',') %></li>
+                <li class="list-group-item"><strong>Estoque Atual:</strong> <%= produto.stock %></li>
+                <li class="list-group-item"><strong>Quantidade Mínima:</strong> <%= produto.quantity_min || 'Não definido' %></li>
+                <li class="list-group-item"><strong>Quantidade Máxima:</strong> <%= produto.quantity_max || 'Não definido' %></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mb-4">
+            <h5>Descrição</h5>
+            <div class="card">
+              <div class="card-body">
+                <%= produto.description || 'Sem descrição disponível.' %>
+              </div>
+            </div>
+          </div>
+          
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="/" class="btn btn-secondary me-md-2">Voltar</a>
+            <a href="/edit/<%= produto.id %>" class="btn btn-warning text-white me-md-2">Editar</a>
+            <form action="/delete/<%= produto.id %>?_method=DELETE" method="POST" class="d-inline" onsubmit="return confirm('Tem certeza que deseja excluir este produto?')">
+              <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

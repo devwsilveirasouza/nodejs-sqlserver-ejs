@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0"><%= title %></h2>
+        </div>
+        <div class="card-body">
+          <form action="/create" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome*</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="description" class="form-label">Descrição</label>
+              <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="supplier" class="form-label">Fornecedor</label>
+                <input type="text" class="form-control" id="supplier" name="supplier">
+              </div>
+              <div class="col-md-6">
+                <label for="categorie" class="form-label">Categoria</label>
+                <input type="text" class="form-control" id="categorie" name="categorie">
+              </div>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="price" class="form-label">Preço*</label>
+                <div class="input-group">
+                  <span class="input-group-text">R$</span>
+                  <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" required>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <label for="stock" class="form-label">Estoque*</label>
+                <input type="number" class="form-control" id="stock" name="stock" min="0" required>
+              </div>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="quantity_min" class="form-label">Quantidade Mínima</label>
+                <input type="number" class="form-control" id="quantity_min" name="quantity_min" min="0">
+              </div>
+              <div class="col-md-6">
+                <label for="quantity_max" class="form-label">Quantidade Máxima</label>
+                <input type="number" class="form-control" id="quantity_max" name="quantity_max" min="0">
+              </div>
+            </div>
+            
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a href="/" class="btn btn-secondary me-md-2">Cancelar</a>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
