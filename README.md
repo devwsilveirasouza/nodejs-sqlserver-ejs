@@ -11,28 +11,28 @@
 
 ### Estrutura do Projeto
 
-product-crud/
-  ├── node_modules/              # Dependências instaladas
-  ├── views/                     # Templates EJS
-  │   ├── partials/              # Componentes reutilizáveis
-  │   │   ├── header.ejs         # Cabeçalho HTML com CSS
-  │   │   ├── footer.ejs         # Rodapé HTML com scripts
-  │   │   └── navbar.ejs         # Barra de navegação
-  │   ├── index.ejs              # Listagem de produtos
-  │   ├── create.ejs             # Formulário de criação
-  │   ├── edit.ejs               # Formulário de edição
-  │   └── details.ejs            # Detalhes do produto
-  ├── public/                    # Arquivos estáticos
-  │   └── css/
-  │       └── style.css          # Estilos customizados
-  ├── routes/                    # Definição de rotas
-  │   └── productRoutes.js       # Rotas para produtos
-  ├── controllers/               # Lógica de negócio
-  │   └── productController.js   # Controlador de produtos
-  ├── models/                    # Acesso a dados
-  │   └── db.js                  # Configuração do banco
-  ├── app.js                     # Ponto de entrada da aplicação
-  └── package.json               # Dependências e scripts
+- product-crud/
+-  ├── node_modules/              # Dependências instaladas
+-  ├── views/                     # Templates EJS
+-  │   ├── partials/              # Componentes reutilizáveis
+-  │   │   ├── header.ejs         # Cabeçalho HTML com CSS
+-  │   │   ├── footer.ejs         # Rodapé HTML com scripts
+-  │   │   └── navbar.ejs         # Barra de navegação
+-  │   ├── index.ejs              # Listagem de produtos
+-  │   ├── create.ejs             # Formulário de criação
+-  │   ├── edit.ejs               # Formulário de edição
+-  │   └── details.ejs            # Detalhes do produto
+-  ├── public/                    # Arquivos estáticos
+-  │   └── css/
+-  │       └── style.css          # Estilos customizados
+-  ├── routes/                    # Definição de rotas
+-  │   └── productRoutes.js       # Rotas para produtos
+-  ├── controllers/               # Lógica de negócio
+-  │   └── productController.js   # Controlador de produtos
+-  ├── models/                    # Acesso a dados
+-  │   └── db.js                  # Configuração do banco
+-  ├── app.js                     # Ponto de entrada da aplicação
+-  └── package.json               # Dependências e scripts
 
 ### Passo a Passo do Desenvolvimento
 1. Inicialização do Projeto
