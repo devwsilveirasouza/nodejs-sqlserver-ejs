@@ -32,6 +32,7 @@ async function setupDatabase() {
     )`;
     // Executa a querie para criar a tabela
     await pool.request().query(createTableQuery);
+    
     console.log('Banco de dados configurado com sucesso');
   } catch (err) {
     console.error('Erro ao configurar o banco de dados:', err);
