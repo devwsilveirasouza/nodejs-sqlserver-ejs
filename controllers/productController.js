@@ -6,7 +6,7 @@ exports.getAll = async (req, res) => {
   try {
     const pool = await db.getConnection();
     const result = await pool.request().query('SELECT * FROM produtos ORDER BY id DESC');
-    res.render('index', { 
+    res.render('products/index', { 
       title: 'Lista de Produtos', 
       produtos: result.recordset,
       success: req.query.success
@@ -19,7 +19,7 @@ exports.getAll = async (req, res) => {
 
 // Renderizar página de criação de produto
 exports.createForm = (req, res) => {
-  res.render('create', { title: 'Novo Produto' });
+  res.render('products/create', { title: 'Novo Produto' });
 };
 
 // Salvar novo produto
@@ -59,7 +59,7 @@ exports.details = async (req, res) => {
       .query('SELECT * FROM produtos WHERE id = @id');
     
     if (result.recordset.length > 0) {
-      res.render('details', { 
+      res.render('products/details', { 
         title: 'Detalhes do Produto', 
         produto: result.recordset[0] 
       });
@@ -82,7 +82,7 @@ exports.editForm = async (req, res) => {
       .query('SELECT * FROM produtos WHERE id = @id');
     
     if (result.recordset.length > 0) {
-      res.render('edit', { 
+      res.render('products/edit', { 
         title: 'Editar Produto', 
         produto: result.recordset[0] 
       });
