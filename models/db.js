@@ -12,11 +12,11 @@ const config = {
   }
 };
 
-// Criação da tabela produtos se não existir
+// Criação das tabelas se não existir
 async function setupDatabase() {
   try {
     const pool = await sql.connect(config);
-    
+    // Querie para criar a tabela produtos
     const createTableQuery = `
     IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='produtos' AND xtype='U')
     CREATE TABLE produtos (
@@ -30,7 +30,7 @@ async function setupDatabase() {
       quantity_max INT,
       stock INT NOT NULL
     )`;
-    
+    // Executa a querie para criar a tabela
     await pool.request().query(createTableQuery);
     console.log('Banco de dados configurado com sucesso');
   } catch (err) {
